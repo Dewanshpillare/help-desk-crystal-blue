@@ -1,12 +1,26 @@
-import { Bot, Search } from "lucide-react";
+import { Bot, Search, Mail, Phone, Video } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 
-const topicsList = [
-  "Parking Issues",
-  "Reservation Queries", 
-  "Payment Problems",
-  "Cancellations"
+const contactOptions = [
+  {
+    icon: Mail,
+    title: "Email Support",
+    description: "Get help via email",
+    action: () => window.open("mailto:support@parkingmanagement.com")
+  },
+  {
+    icon: Phone,
+    title: "Phone Support", 
+    description: "Call us directly",
+    action: () => window.open("tel:+1-800-PARKING")
+  },
+  {
+    icon: Video,
+    title: "Live Chat",
+    description: "Chat with an agent",
+    action: () => console.log("Opening live chat...")
+  }
 ];
 
 interface SmartAssistantProps {
@@ -34,14 +48,20 @@ export const SmartAssistant = ({ onTopicClick }: SmartAssistantProps) => {
         </div>
 
         <div className="space-y-2">
-          <p className="text-sm font-medium text-text-secondary mb-3">Popular Topics:</p>
-          {topicsList.map((topic, index) => (
+          <p className="text-sm font-medium text-text-secondary mb-3">Contact Support:</p>
+          {contactOptions.map((option, index) => (
             <button
               key={index}
-              onClick={() => onTopicClick?.(topic)}
-              className="w-full text-left px-4 py-3 text-text-primary rounded-lg transition-smooth hover:bg-hover-light hover:text-accent border border-transparent hover:border-accent/20"
+              onClick={option.action}
+              className="w-full flex items-center gap-3 p-3 rounded-lg transition-smooth hover:bg-hover-light hover:shadow-soft border border-transparent hover:border-accent/20"
             >
-              {topic}
+              <div className="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center">
+                <option.icon className="w-4 h-4 text-accent" />
+              </div>
+              <div className="text-left">
+                <p className="font-medium text-text-primary text-sm">{option.title}</p>
+                <p className="text-xs text-text-secondary">{option.description}</p>
+              </div>
             </button>
           ))}
         </div>

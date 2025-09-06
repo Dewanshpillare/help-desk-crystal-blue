@@ -2,6 +2,7 @@ import { SearchBar } from "@/components/HelpSupport/SearchBar";
 import { FAQAccordion } from "@/components/HelpSupport/FAQAccordion";
 import { SmartAssistant } from "@/components/HelpSupport/SmartAssistant";
 import { FloatingActionButton } from "@/components/HelpSupport/FloatingActionButton";
+import { Header } from "@/components/Navigation/Header";
 
 const HelpSupport = () => {
   const handleSearch = (query: string) => {
@@ -16,6 +17,9 @@ const HelpSupport = () => {
 
   return (
     <div className="min-h-screen bg-neutral-50">
+      {/* Navigation */}
+      <Header />
+      
       {/* Header Section */}
       <header className="w-full gradient-primary text-white py-16 px-6 shadow-medium">
         <div className="container mx-auto text-center">
@@ -67,10 +71,31 @@ const HelpSupport = () => {
 
       {/* Footer */}
       <footer className="bg-neutral-100 py-8 px-6 mt-16">
-        <div className="container mx-auto text-center">
-          <p className="text-text-tertiary">
-            © 2025 Parking Management System — All Rights Reserved
-          </p>
+        <div className="container mx-auto">
+          <div className="grid md:grid-cols-3 gap-6 text-center md:text-left">
+            <div>
+              <h4 className="font-semibold text-text-primary mb-3">Contact Information</h4>
+              <p className="text-text-secondary mb-2">📧 support@parkingmanagement.com</p>
+              <p className="text-text-secondary mb-2">📞 +1-800-PARKING</p>
+              <p className="text-text-secondary">🏢 123 Parking Ave, City, State 12345</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-text-primary mb-3">Support Hours</h4>
+              <p className="text-text-secondary mb-2">Monday - Friday: 8:00 AM - 8:00 PM</p>
+              <p className="text-text-secondary mb-2">Saturday: 9:00 AM - 5:00 PM</p>
+              <p className="text-text-secondary">Sunday: 10:00 AM - 4:00 PM</p>
+            </div>
+            <div>
+              <h4 className="font-semibold text-text-primary mb-3">Emergency Support</h4>
+              <p className="text-text-secondary mb-2">🚨 24/7 Emergency Line:</p>
+              <p className="text-text-secondary font-medium">+1-800-EMERGENCY</p>
+            </div>
+          </div>
+          <div className="border-t border-border/20 mt-6 pt-6 text-center">
+            <p className="text-text-tertiary">
+              © 2025 Parking Management System — All Rights Reserved
+            </p>
+          </div>
         </div>
       </footer>
 
