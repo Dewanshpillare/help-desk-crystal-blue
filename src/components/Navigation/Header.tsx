@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
-  console.log("Header component is rendering");
   const navigate = useNavigate();
 
   return (

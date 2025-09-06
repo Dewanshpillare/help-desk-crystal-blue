@@ -28,7 +28,6 @@ interface SmartAssistantProps {
 }
 
 export const SmartAssistant = ({ onTopicClick }: SmartAssistantProps) => {
-  console.log("SmartAssistant component is rendering");
   return (
     <Card className="bg-white rounded-xl shadow-medium p-6 transition-smooth hover:shadow-strong">
       <div className="flex items-center gap-3 mb-6">
