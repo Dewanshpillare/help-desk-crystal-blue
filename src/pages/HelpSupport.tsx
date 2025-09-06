@@ -1,14 +1,25 @@
-import { Header } from "@/components/Navigation/Header";
-
 const HelpSupport = () => {
-  console.log("HelpSupport component is rendering - simplified version");
+  console.log("HelpSupport component is rendering");
   
-  return (
-    <div className="min-h-screen bg-white">
-      <h1 className="text-2xl font-bold p-8 text-black">Help & Support Page</h1>
-      <p className="p-8 text-black">This is a test to see if the page renders</p>
-    </div>
-  );
+  try {
+    return (
+      <div style={{ minHeight: "100vh", backgroundColor: "white", padding: "20px" }}>
+        <h1 style={{ color: "black", fontSize: "24px", fontWeight: "bold" }}>
+          Help & Support Page
+        </h1>
+        <p style={{ color: "black", marginTop: "20px" }}>
+          This page is now rendering successfully!
+        </p>
+      </div>
+    );
+  } catch (error) {
+    console.error("Error in HelpSupport component:", error);
+    return (
+      <div style={{ minHeight: "100vh", backgroundColor: "red", color: "white", padding: "20px" }}>
+        Error: {String(error)}
+      </div>
+    );
+  }
 };
 
 export default HelpSupport;
