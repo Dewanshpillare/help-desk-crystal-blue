@@ -2,41 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Parking Management System Design System - Crystal Blue Theme
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 218 15% 13%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 218 15% 13%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 218 15% 13%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Crystal Blue Gradient Theme */
+    --primary: 196 74% 44%; /* #2193b0 converted to HSL */
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 191 71% 50%; /* #23a6d5 converted to HSL */
+    --primary-lighter: 188 82% 67%; /* #6dd5ed converted to HSL */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 40% 98%;
+    --secondary-foreground: 218 15% 13%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 17% 96%;
+    --muted-foreground: 215 12% 33%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 214 100% 50%; /* #007bff converted to HSL */
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 196 74% 44%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Custom Design Tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)), hsl(var(--primary-lighter)));
+    --gradient-subtle: linear-gradient(180deg, hsl(210 17% 98%), hsl(210 17% 95%));
+    
+    /* Shadows */
+    --shadow-soft: 0 2px 10px -2px hsl(var(--primary) / 0.1);
+    --shadow-medium: 0 4px 20px -4px hsl(var(--primary) / 0.15);
+    --shadow-strong: 0 8px 30px -8px hsl(var(--primary) / 0.2);
+    --shadow-glow: 0 0 0 3px hsl(var(--accent) / 0.1);
+
+    /* Text Colors */
+    --text-primary: 218 15% 13%; /* #222 equivalent */
+    --text-secondary: 215 12% 33%; /* #555 equivalent */
+    --text-tertiary: 210 8% 40%; /* #666 equivalent */
+
+    /* Backgrounds */
+    --bg-neutral-50: 210 17% 98%; /* #f8f9fa equivalent */
+    --bg-neutral-100: 210 17% 95%; /* #f1f1f1 equivalent */
+    --bg-neutral-200: 210 17% 92%; /* #f9f9f9 equivalent */
+
+    /* Interactive States */
+    --hover-light: 227 100% 96%; /* #e3f2fd equivalent */
+    --focus-ring: hsl(var(--accent) / 0.2);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s ease-out;
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +132,36 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+  }
+
+  /* Utility Classes */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+
+  .shadow-strong {
+    box-shadow: var(--shadow-strong);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .transition-fast {
+    transition: var(--transition-fast);
   }
 }
